@@ -214,36 +214,8 @@ BTN_BUSCAR.onclick = () => {
       (pelicula) =>
         pelicula.title.toLowerCase().includes(INPUT_BUSCAR) ||
         pelicula.overview.toLowerCase().includes(INPUT_BUSCAR) ||
-        pelicula.tagline.toLowerCase().includes(INPUT_BUSCAR)
+        pelicula.tagline.toLowerCase().includes(INPUT_BUSCAR) ||
+        pelicula.genres.some((genre) => conditionForFilteringGenre(genre))
     )
-  ) &&
-    mostrarINfo(
-      infoPeliculas.filter((peli) =>
-        peli.genres.some((genre) => conditionForFilteringGenre(genre))
-      )
-    );
+  );
 };
-
-// mostrarINfo(
-//   infoPeliculas.filter((pelicula) =>
-//     pelicula.title.toLowerCase().includes(INPUT_BUSCAR)
-//   )
-// ) ||
-//   mostrarINfo(
-//     infoPeliculas.filter((pelicula) =>
-//       pelicula.overview.toLowerCase().includes(INPUT_BUSCAR)
-//     )
-//   );
-// ||
-// mostrarINfo(
-//   infoPeliculas.filter((pelicula) =>
-//     pelicula.tagline.toLowerCase().includes(INPUT_BUSCAR)
-//   )
-// );
-// const res = infoPeliculas.filter(
-//   (pelicula) =>
-//     pelicula.title.toLowerCase().includes(INPUT_BUSCAR) ||
-//     pelicula.overview.toLowerCase().includes(INPUT_BUSCAR) ||
-//     pelicula.tagline.toLowerCase().includes(INPUT_BUSCAR)
-// );
-// mostrarINfo(res);
